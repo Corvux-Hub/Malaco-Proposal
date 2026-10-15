@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Malaco Investment Paper</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Malaco Investment Paper: a USD $125,000 bridge note for the second lot with Image 3.0, and land in Tequila, Jalisco.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: una sola página de scroll; paneles muy redondeados que alternan obsidiana y marfil sobre fondo negro;
+   navegación flotante tipo píldora con índice a pantalla completa. Marca Malaco: Playfair Display + Inter, dorado #C69739. */
+:root{
+  --page:#0b0908;
+  --gold:#c69739;
+  --f-display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r-panel:clamp(24px, 3vw, 40px);
+  --r-card:clamp(18px, 2vw, 26px);
+  --night-ink:#efece7; --night-muted:#98907f;
+  color-scheme:dark;
+}
+/* Cada panel define su propio juego de colores (claro u oscuro) */
+.ivory{
+  --bg:#f3efe8; --ink:#1c1816; --ink-2:#4f4842; --muted:#6b6359;
+  --line:rgba(28,24,22,.12); --line-strong:rgba(28,24,22,.28); --stroke:rgba(28,24,22,.16);
+  --fill:#ebe5da; --fill-2:#e2dacd;
+  --accent:#86621f; --accent-2:#dcc792; --bar:#a87b25; --track:#ddd5c7;
+  --land:#2f7a62; --mkt:#2f5a9e; --cost:#8b8276; --chain:#d6cdbd;
+  --t1:#6e5119; --t2:#a87b25; --t3:#c9a556;
+  --sku-b:#3e8573; --sku-r:#8b2a3a; --sku-a:#2b2320;
+  --warn:#8a2841; --warn-soft:#f1dde1; --warn-ink:#7a2238;
+  --art-filter:none; --art-blend:multiply;
+  color-scheme:light;
+}
+.dark{
+  --bg:#15110f; --ink:#efece7; --ink-2:#c9c2b7; --muted:#98907f;
+  --line:rgba(239,236,231,.12); --line-strong:rgba(239,236,231,.3); --stroke:rgba(239,236,231,.14);
+  --fill:#211c19; --fill-2:#2a2420;
+  --accent:#d0a24a; --accent-2:#5a4824; --bar:#c69739; --track:#302924;
+  --land:#4fa58a; --mkt:#6b8fd6; --cost:#8d8478; --chain:#3b3530;
+  --t1:#e6c886; --t2:#c69739; --t3:#8a6824;
+  --sku-b:#78c2ad; --sku-r:#d0566b; --sku-a:#c69739;
+  --warn:#e08a9c; --warn-soft:#3a1c24; --warn-ink:#f0b3c0;
+  --art-filter:invert(1) sepia(.3) brightness(.9); --art-blend:screen;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0}
+body{background:var(--page);color:var(--night-ink);font:400 16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+[hidden]{display:none!important}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+p{margin:0}
+h1,h2,h3{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- navegación flotante ---------- */
+.nav{position:fixed;top:calc(12px + env(safe-area-inset-top, 0px));left:50%;transform:translateX(-50%);z-index:50;
+  width:min(calc(100% - 32px - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)), 760px);display:flex;align-items:center;gap:10px;padding:6px 6px 6px 20px;border-radius:999px;
+  background:rgba(21,17,15,.74);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);
+  border:1px solid rgba(239,236,231,.1);box-shadow:0 12px 40px -18px rgba(0,0,0,.7);overflow:hidden}
+.nav-progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+.brand{font:700 1rem/1 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--night-ink);text-decoration:none;white-space:nowrap}
+.brand sup{color:var(--gold);font-size:.55em;letter-spacing:0;margin-left:.12em;position:relative;top:-.1em}
+.nav-where{flex:1;min-width:0;font:500 .78rem/1 var(--f-body);color:var(--night-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:12px;border-left:1px solid rgba(239,236,231,.12)}
+.lang{display:inline-flex;gap:2px;flex:none}
+.lang button{font:600 .72rem/1 var(--f-body);letter-spacing:.12em;color:var(--night-muted);background:transparent;border:0;padding:9px 9px;border-radius:999px;cursor:pointer}
+.lang button:hover{color:var(--night-ink)}
+.lang button[aria-pressed="true"]{color:#141110;background:var(--night-ink)}
+.menu-btn{flex:none;font:600 .78rem/1 var(--f-body);letter-spacing:.06em;color:#141110;background:var(--gold);border:0;border-radius:999px;padding:12px 18px;cursor:pointer}
+.menu-btn:hover{background:#d8ab52}
+
+/* ---------- índice a pantalla completa ---------- */
+.menu{position:fixed;inset:0;z-index:60;background:rgba(11,9,8,.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  overflow:auto;padding:calc(96px + env(safe-area-inset-top, 0px)) clamp(20px, 7vw, 120px) calc(48px + env(safe-area-inset-bottom, 0px))}
+.menu-close{position:fixed;top:calc(18px + env(safe-area-inset-top, 0px));right:clamp(16px, 4vw, 40px);font:600 .78rem/1 var(--f-body);color:var(--night-ink);background:transparent;border:1px solid rgba(239,236,231,.3);border-radius:999px;padding:12px 18px;cursor:pointer}
+.menu ol{list-style:none;margin:0 auto;padding:0;max-width:980px;display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:0 48px}
+.menu li a{display:grid;grid-template-columns:3.2rem minmax(0,1fr);align-items:baseline;gap:12px;padding:16px 0;border-top:1px solid rgba(239,236,231,.1);text-decoration:none;color:var(--night-ink);font:500 clamp(1.25rem, 1rem + 1.1vw, 1.9rem)/1.2 var(--f-display)}
+.menu li a span{font:italic 500 1rem/1 var(--f-display);color:var(--gold)}
+.menu li a:hover,.menu li a[aria-current="true"]{color:var(--gold)}
+
+/* ---------- paneles ---------- */
+main{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:12px 0}
+.panel{position:relative;max-width:1440px;margin:0 auto 14px;border-radius:var(--r-panel);background:var(--bg);color:var(--ink);
+  padding:clamp(64px, 8vw, 128px) clamp(20px, 6vw, 104px);overflow:hidden;scroll-margin-top:76px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(36px, 4.5vw, 64px);position:relative}
+.sec-num{position:absolute;top:clamp(28px, 4vw, 56px);right:clamp(24px, 5vw, 80px);font:italic 500 clamp(4.5rem, 3rem + 7vw, 11rem)/.8 var(--f-display);
+  color:transparent;-webkit-text-stroke:1.5px var(--stroke);pointer-events:none;user-select:none;font-variant-numeric:lining-nums}
+.sec-head{display:flex;flex-direction:column;gap:18px;max-width:860px}
+.eyebrow{font:600 .72rem/1.3 var(--f-body);letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
+.sec-title{font:600 clamp(2.1rem, 1.3rem + 3.2vw, 4rem)/1.04 var(--f-display);letter-spacing:-.015em;text-wrap:balance}
+.sec-title em,.hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.lead{font-size:clamp(1.05rem, 1rem + .3vw, 1.22rem);line-height:1.6;color:var(--ink-2);max-width:62ch}
+.small{font-size:.86rem;line-height:1.55}
+.muted{color:var(--muted)}
+.h3{font:600 clamp(1.25rem, 1.1rem + .6vw, 1.6rem)/1.2 var(--f-display)}
+.label{font:600 .7rem/1.3 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.big{font:600 clamp(2rem, 1.5rem + 2vw, 3.2rem)/1 var(--f-display);font-variant-numeric:lining-nums;letter-spacing:-.01em}
+.huge{font:600 clamp(3rem, 2rem + 4vw, 5.4rem)/.95 var(--f-display);font-variant-numeric:lining-nums;letter-spacing:-.02em}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.block{display:flex;flex-direction:column;gap:18px;min-width:0}
+
+/* ---------- hero ---------- */
+.hero{min-height:clamp(600px, 94svh, 940px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:end;gap:24px;
+  padding-top:calc(120px + env(safe-area-inset-top, 0px));padding-bottom:clamp(40px, 6vw, 88px)}
+.hero::before{content:"";position:absolute;inset:auto -20% -40% 30%;height:90%;background:radial-gradient(closest-side, rgba(198,151,57,.22), transparent);pointer-events:none}
+.hero-text{position:relative;z-index:1;display:flex;flex-direction:column;gap:26px;max-width:760px}
+.hero h1{font:600 clamp(3rem, 1.6rem + 6vw, 6.8rem)/.96 var(--f-display);letter-spacing:-.025em;text-wrap:balance}
+.hero .sub{font:italic 400 clamp(1.15rem, 1rem + .7vw, 1.55rem)/1.45 var(--f-display);color:var(--ink-2);max-width:40ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.hero-meta{font:500 .74rem/1.5 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero-bottle{position:relative;z-index:1;align-self:stretch;min-height:420px}
+.hero-bottle img{position:absolute;inset:-12% -10% -6% -10%;width:120%;height:118%;object-fit:cover;object-position:50% 35%;
+  -webkit-mask-image:radial-gradient(ellipse 60% 62% at 50% 46%, #000 52%, transparent 78%);mask-image:radial-gradient(ellipse 60% 62% at 50% 46%, #000 52%, transparent 78%)}
+
+/* ---------- botones y chips ---------- */
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:15px 24px;font:600 .82rem/1 var(--f-body);letter-spacing:.04em;
+  text-decoration:none;border:1px solid var(--line-strong);color:var(--ink);background:transparent;cursor:pointer;transition:background .2s ease, color .2s ease, border-color .2s ease}
+.pill:hover{border-color:var(--ink)}
+.pill.gold{background:var(--gold);color:#141110;border-color:transparent}
+.pill.gold:hover{background:#d8ab52}
+.pill.sm{padding:10px 16px;font-size:.76rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 .82rem/1 var(--f-body);padding:10px 14px;border-radius:999px;background:var(--fill);color:var(--ink-2)}
+.pending{display:inline-flex;align-items:center;gap:7px;font:600 .72rem/1 var(--f-body);letter-spacing:.04em;padding:7px 11px;border-radius:999px;background:var(--warn-soft);color:var(--warn-ink);white-space:nowrap;vertical-align:middle}
+.pending svg{width:12px;height:12px;flex:none}
+.pending svg path{fill:var(--warn)}
+.pending svg rect{fill:var(--warn-soft)}
+
+/* ---------- bento ---------- */
+.bento{display:grid;grid-template-columns:repeat(12, minmax(0,1fr));gap:14px}
+.tile{background:var(--fill);border-radius:var(--r-card);padding:clamp(22px, 2.6vw, 34px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.tile.ink{background:var(--ink);color:var(--bg)}
+.tile.ink .label,.tile.ink .muted{color:inherit;opacity:.7}
+.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:span 12}
+.r2{grid-row:span 2}
+.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ticks li{display:flex;gap:10px;align-items:baseline;color:var(--ink-2)}
+.ticks li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;transform:translateY(-2px)}
+.tile.ink .ticks li{color:inherit}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.82rem;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+.legend b{font-weight:600;color:var(--ink)}
+
+/* ---------- barras ---------- */
+.stack{display:flex;gap:3px;height:14px}
+.stack span{display:block;border-radius:999px;transition:flex-grow .25s ease}
+.bar{height:10px;border-radius:999px;background:var(--track);position:relative;overflow:hidden}
+.bar > span{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:var(--bar)}
+.bar.empty{background:repeating-linear-gradient(135deg, var(--track) 0 6px, transparent 6px 11px)}
+.blines{display:flex;flex-direction:column}
+.bline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 24px;padding:20px 0;border-top:1px solid var(--line)}
+.bline:last-child{border-bottom:1px solid var(--line)}
+.bline .bar{grid-column:1 / -1}
+.bline h3{font:600 1rem/1.35 var(--f-body)}
+.bline p{font-size:.88rem;color:var(--ink-2);margin-top:3px;max-width:60ch}
+.bline .val{text-align:right;font:600 1.3rem/1.1 var(--f-display);font-variant-numeric:lining-nums;white-space:nowrap}
+.bline .val small{display:block;font:500 .74rem/1.4 var(--f-body);color:var(--muted)}
+.total-line{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:18px}
+.total-line .big{font-size:clamp(1.8rem, 1.4rem + 1.4vw, 2.6rem)}
+
+/* ---------- listas (en lugar de tablas) ---------- */
+.rows{display:flex;flex-direction:column;margin:0}
+.row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.7fr);gap:6px 40px;padding:18px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row dt{font-weight:600}
+.row dd{margin:0;color:var(--ink-2)}
+.cost{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 28px;padding:16px 0;border-top:1px solid var(--line);align-items:baseline}
+.cost:last-of-type{border-bottom:1px solid var(--line)}
+.cost .mx{color:var(--muted);font-size:.9rem}
+.cost .us{font:600 1.15rem/1 var(--f-display);font-variant-numeric:lining-nums;min-width:4.5ch;text-align:right}
+.cost.sum{border-top:1.5px solid var(--ink)}
+.cost.sum span:first-child{font-weight:700}
+.items{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:0 48px}
+.item{display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:4px 14px;padding:22px 0;border-top:1px solid var(--line)}
+.item .n{font:italic 500 1.25rem/1.3 var(--f-display);color:var(--accent);grid-row:span 2}
+.item h3{font:600 1rem/1.4 var(--f-body)}
+.item p{color:var(--ink-2);font-size:.94rem}
+.items.one{grid-template-columns:minmax(0,1fr)}
+.shifts{display:flex;flex-direction:column}
+.shift{display:grid;grid-template-columns:minmax(0,1fr) 2.4rem minmax(0,1fr);gap:12px 18px;align-items:center;padding:22px 0;border-top:1px solid var(--line)}
+.shift:last-child{border-bottom:1px solid var(--line)}
+.shift .from{color:var(--ink-2)}
+.shift .arrow{font:400 1.4rem/1 var(--f-display);color:var(--accent);text-align:center}
+.shift .to{font-weight:600}
+
+/* ---------- marca ---------- */
+.heritage{display:flex;align-items:center;gap:clamp(16px, 3vw, 36px);flex-wrap:wrap}
+.heritage strong{font:600 clamp(5rem, 3rem + 7vw, 9rem)/.8 var(--f-display);color:var(--accent);font-variant-numeric:lining-nums}
+.heritage span{font:italic 400 clamp(1.2rem, 1rem + .8vw, 1.7rem)/1.35 var(--f-display);color:var(--ink-2);max-width:26ch}
+.pillars{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:14px}
+.pillar{background:var(--fill);border-radius:var(--r-card);padding:28px;display:flex;flex-direction:column;gap:10px}
+.pillar .n{font:italic 500 1.1rem/1 var(--f-display);color:var(--accent)}
+.pillar h3{font:600 1.35rem/1.2 var(--f-display)}
+.pillar p{color:var(--ink-2);font-size:.95rem}
+.evo{display:grid;grid-template-columns:minmax(0,.9fr) auto minmax(0,1.1fr);gap:clamp(16px, 3vw, 40px);align-items:center}
+.evo figure{margin:0;display:flex;flex-direction:column;gap:16px}
+.evo figcaption{display:flex;flex-direction:column;gap:6px;color:var(--ink-2);font-size:.94rem}
+.evo .arrow{font:italic 400 clamp(2rem, 1.5rem + 2vw, 3.4rem)/1 var(--f-display);color:var(--accent)}
+.art-card{background:#fff;border-radius:var(--r-card);padding:clamp(18px, 3vw, 36px);display:flex;align-items:center;justify-content:center}
+.line-art{width:100%;height:auto}
+.evo-now .line-art{max-width:300px}
+.photo{border-radius:var(--r-card);overflow:hidden;background:#0d0b0a;position:relative;margin:0}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.portrait{aspect-ratio:4/5}
+.photo.wide{aspect-ratio:16/10}
+.ref-tag{position:absolute;left:14px;top:14px;font:600 .62rem/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;background:rgba(21,17,15,.78);color:#efece7;padding:8px 11px;border-radius:999px}
+
+/* ---------- producto ---------- */
+.products{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:clamp(12px, 2vw, 24px)}
+.product{display:flex;flex-direction:column;gap:14px;min-width:0}
+.product-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.product-head h3{font:600 1.5rem/1.1 var(--f-display)}
+.product-head .big{font-size:1.6rem}
+.product .bar{height:12px;background:transparent}
+.product .bar .cap{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:var(--fill-2)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---------- simuladores ---------- */
+.sim{background:var(--fill);border-radius:var(--r-card);padding:clamp(22px, 3vw, 40px);display:flex;flex-direction:column;gap:26px}
+.sim-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.seg button{font:600 .8rem/1 var(--f-body);color:var(--ink-2);background:transparent;border:1px solid var(--line-strong);padding:11px 16px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.readout{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.readout output{font:600 clamp(2.6rem, 2rem + 2vw, 3.6rem)/1 var(--f-display);font-variant-numeric:lining-nums}
+.readout span{color:var(--ink-2);font-size:.9rem}
+input[type=range]{width:100%;accent-color:var(--bar);height:30px;margin:0}
+.scale{display:flex;justify-content:space-between;font:500 .72rem/1 var(--f-body);color:var(--muted);font-variant-numeric:tabular-nums}
+.mini{display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:12px}
+.mini > div{background:var(--bg);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.mini .v{font:600 1.55rem/1.1 var(--f-display);font-variant-numeric:lining-nums}
+.mini .s{font-size:.8rem;color:var(--ink-2);line-height:1.4}
+.meter-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+
+/* ---------- calendario ---------- */
+.tranches{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:14px}
+.tranche{background:var(--fill);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:10px}
+.tranche .label{display:flex;align-items:center;gap:8px}
+.tranche .label i{width:10px;height:10px;border-radius:50%}
+.tranche .v{font:600 1.8rem/1 var(--f-display);font-variant-numeric:lining-nums}
+.tranche p{font-size:.9rem;color:var(--ink-2)}
+.gantt-wrap{overflow-x:auto;margin-inline:-4px -14px;padding:4px 14px 4px 4px}
+.gantt{min-width:560px;display:flex;flex-direction:column}
+.g-row{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;min-height:38px}
+.g-label{font-size:.84rem;font-weight:600;padding-right:14px;line-height:1.25}
+.g-label.sub{font:600 .66rem/1.2 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.g-track{position:relative;height:38px;background-image:linear-gradient(to right, var(--line) 1px, transparent 1px);background-size:12.5% 100%;border-right:1px solid var(--line)}
+.g-bar{position:absolute;top:10px;height:18px;border-radius:999px;background:var(--bar)}
+.g-bar.long{background:var(--accent-2)}
+.g-row.money .g-track{height:60px}
+.g-pt{position:absolute;top:31px;width:12px;height:12px;border-radius:3px;transform:translate(-50%,-50%) rotate(45deg);border:2px solid var(--bg)}
+.g-pt.in{background:var(--bar)}
+.g-pt.out{background:var(--land)}
+.g-pt-l{position:absolute;top:8px;transform:translateX(-50%);font:600 .64rem/1 var(--f-body);color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.g-pt-l.first{transform:none}
+.g-pt-l.last{transform:translateX(-100%)}
+.g-pt-l.below{top:44px}
+.g-dot{position:absolute;top:50%;width:8px;height:8px;border-radius:50%;background:var(--bar);transform:translate(-50%,-50%)}
+.g-dot.q{background:var(--t3)}
+.g-axis{position:relative;height:24px}
+.g-axis span{position:absolute;transform:translateX(-50%);font:500 .7rem/1 var(--f-body);color:var(--muted);top:8px;white-space:nowrap}
+.strip{display:grid;grid-template-columns:repeat(24, minmax(0,1fr));gap:4px}
+.strip span{height:30px;border-radius:999px;background:var(--track)}
+.strip span.m{background:var(--bar)}
+.strip span.q{background:var(--t3)}
+.strip-axis{display:grid;grid-template-columns:repeat(24, minmax(0,1fr));gap:4px;font:500 .66rem/1 var(--f-body);color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+
+/* ---------- terreno ---------- */
+.gallery{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:14px}
+.lots{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:14px}
+.lot{all:unset;box-sizing:border-box;cursor:pointer;background:var(--fill);border-radius:var(--r-card);padding:24px;display:flex;flex-direction:column;gap:14px;border:2px solid transparent;transition:border-color .2s ease, background .2s ease}
+.lot:hover{background:var(--fill-2)}
+.lot[aria-pressed="true"]{border-color:var(--ink)}
+.lot:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.lot .area{font:600 2.2rem/1 var(--f-display);font-variant-numeric:lining-nums}
+.lot .area small{font:500 .9rem/1 var(--f-body);color:var(--ink-2)}
+.parcels{display:flex;gap:6px}
+.parcels i{flex:1;aspect-ratio:1/1;border-radius:10px;background:var(--fill-2)}
+.parcels i.on{background:var(--land)}
+.lot .price{display:flex;flex-direction:column;gap:3px}
+.lot .price strong{font:600 1.15rem/1.2 var(--f-display);font-variant-numeric:lining-nums}
+.lot .price span{font-size:.84rem;color:var(--ink-2)}
+.totalnote{font:italic 400 clamp(1.1rem, 1rem + .5vw, 1.4rem)/1.4 var(--f-display);color:var(--ink-2)}
+.totalnote b{font-style:normal;font-weight:600;color:var(--ink)}
+.casa{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px, 4vw, 56px);align-items:center}
+
+/* ---------- cierre y pie ---------- */
+.closing-quote{font:italic 400 clamp(1.6rem, 1.1rem + 2.2vw, 3rem)/1.25 var(--f-display);max-width:28ch;text-wrap:balance}
+.foot{max-width:1120px;margin:0 auto;padding-block:clamp(48px, 6vw, 80px) calc(56px + env(safe-area-inset-bottom, 0px));padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:24px 48px;color:var(--night-muted);font-size:.82rem;line-height:1.6}
+.foot .brand{font-size:1.3rem}
+.foot p + p{margin-top:10px}
+
+@media (max-width: 900px){
+  .bento > *{grid-column:span 12}
+  .bento > .s3{grid-column:span 6}
+  .r2{grid-row:auto}
+  .tranches{grid-template-columns:repeat(2, minmax(0,1fr))}
+  .hero{grid-template-columns:minmax(0,1fr);align-items:start}
+  .hero-bottle{min-height:380px;order:2}
+  .hero-bottle img{inset:-8% -20% -10% -20%;width:140%;height:118%}
+}
+@media (max-width: 720px){
+  .items,.pillars,.gallery,.lots,.casa,.menu ol{grid-template-columns:minmax(0,1fr)}
+  .evo{grid-template-columns:minmax(0,1fr)}
+  .evo .arrow{transform:rotate(90deg);justify-self:center}
+  .row{grid-template-columns:minmax(0,1fr)}
+  .shift{grid-template-columns:minmax(0,1fr)}
+  .shift .arrow{text-align:left;transform:rotate(90deg);width:1.4rem}
+  .foot{grid-template-columns:minmax(0,1fr)}
+  .nav-where{display:none}
+  .sec-num{position:static;font-size:4rem;margin-bottom:-12px}
+  .strip-axis span:nth-child(odd){visibility:hidden}
+  .products{gap:10px}
+  .product-head{flex-direction:column;gap:4px}
+  .product-head h3{font-size:1.1rem}
+  .product-head .big{font-size:1.2rem}
+  .product .sub{font-size:.72rem}
+}
+@media (max-width: 420px){
+  .products{grid-template-columns:minmax(0,1fr)}
+  .product-head{flex-direction:row}
+  .product-head h3{font-size:1.4rem}
+  .tranches{grid-template-columns:minmax(0,1fr)}
+  .bento > .s3{grid-column:span 12}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<noscript><p style="padding:24px">This proposal requires JavaScript. · Esta propuesta necesita JavaScript.</p></noscript>
+
+<nav class="nav" id="nav" aria-label="Navigation">
+  <a class="brand" href="#inicio">MALACO<sup>®</sup></a>
+  <span class="nav-where" id="where"></span>
+  <span id="langSlot"></span>
+  <button class="menu-btn" id="menuBtn" type="button" aria-controls="menu" aria-expanded="false"></button>
+  <span class="nav-progress" id="prog" aria-hidden="true"></span>
+</nav>
+<div class="menu dark" id="menu" hidden>
+  <button class="menu-close" id="menuClose" type="button"></button>
+  <ol id="menuList"></ol>
+</div>
+<main id="main"></main>
+
+<script>
+(function(){
+  /* =========================================================
+     MULTIMEDIA (carpeta assets/)
+     ========================================================= */
+  const ASSETS = {
+    hero:       'assets/botella-anejo.webp',
+    blanco:     'assets/botella-blanco.webp',
+    reposado:   'assets/botella-reposado.webp',
+    anejo:      'assets/botella-anejo.webp',
+    logoActual: 'assets/logo-registro.jpg',
+    penca:      'assets/penca.jpg',
+    land:       ['assets/terreno-ref-1.jpg', 'assets/terreno-ref-2.jpg']
+  };
+
+  /* ---------- datos ---------- */
+  const FX = 18, N = 10000, NOTE = 125000, LOT2 = 100000, MKT = 25000, INTEREST = 20000, LOT_M2 = 300, LOT_MXN = 360000;
+  const ALLIN = 156/FX + 1 + 15000/N + 36000/N + MKT/N; // 17.27 USD por botella
+
+  const state = { lang:'en', lots:2, price:40, rate:5, years:10 };
+  try {
+    // Inglés por defecto; solo se recuerda si el visitante cambia el idioma
+    const saved = localStorage.getItem('malaco-lang-v2');
+    if (saved === 'en' || saved === 'es') state.lang = saved;
+    const l = Number(localStorage.getItem('malaco-lots'));
+    if ([1,2,3].indexOf(l) > -1) state.lots = l;
+  } catch (e) {}
+
+  /* ---------- utilidades ---------- */
+  const T = (es, en) => state.lang === 'en' ? en : es;
+  const usd = (n, d=0) => '$' + Number(n).toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d});
+  const int = n => Number(n).toLocaleString('en-US');
+  const landUSD = () => state.lots * LOT_MXN / FX;
+  const total = () => NOTE + landUSD();
+  const lotsWord = n => T(n === 1 ? 'lote' : 'lotes', n === 1 ? 'lot' : 'lots');
+  const $ = id => document.getElementById(id);
+  const ICON = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 .8 11.6 11H.4z"/><rect x="5.4" y="4.2" width="1.2" height="3.6" rx=".5"/><rect x="5.4" y="8.6" width="1.2" height="1.2" rx=".5"/></svg>';
+  const pending = txt => '<span class="pending">' + ICON + txt + '</span>';
+  const head = (id, eb, h, lead) => `<header class="sec-head"><p class="eyebrow">${eb}</p><h2 class="sec-title" id="h-${id}">${h}</h2>${lead ? `<p class="lead">${lead}</p>` : ''}</header>`;
+  const rows = list => `<dl class="rows">${list.map(r => `<div class="row"><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('')}</dl>`;
+  const dot = v => `<i style="background:var(${v})"></i>`;
+  const photo = (src, alt, cls, extra) => `<figure class="photo ${cls || ''}"><img src="${src}" alt="${alt}">${extra || ''}</figure>`;
+  const bline = (h, d, val, sub, pct, color) => `<div class="bline"><div><h3>${h}</h3><p>${d}</p></div>${val === null ? `<div>${pending(T('Por definir', 'To be defined'))}</div>` : `<div class="val">${val}${sub ? `<small>${sub}</small>` : ''}</div>`}<div class="bar${val === null ? ' empty' : ''}">${val === null ? '' : `<span style="width:${pct}%${color ? `;background:var(${color})` : ''}"></span>`}</div></div>`;
+  const langSwitch = () => `<span class="lang" role="group" aria-label="${T('Idioma', 'Language')}"><button type="button" data-lang="es" aria-pressed="${state.lang === 'es'}" aria-label="Español">ES</button><button type="button" data-lang="en" aria-pressed="${state.lang === 'en'}" aria-label="English">EN</button></span>`;
+
+  const ORDER = [['resumen','ivory'],['porque','dark'],['marca','ivory'],['lote','dark'],['numeros','ivory'],['eeuu','dark'],['fondos','ivory'],['nota','dark'],['tramos','ivory'],['control','dark'],['terreno','ivory'],['pasos','dark']];
+  const TITLE = id => ({
+    resumen:T('Resumen', 'Summary'), porque:T('Por qué Malaco', 'Why Malaco'), marca:T('Marca e Imagen 3.0', 'Brand and Image 3.0'),
+    lote:T('El segundo lote', 'The second lot'), numeros:T('Números por botella', 'Unit economics'), eeuu:T('Estados Unidos', 'United States'),
+    fondos:T('Uso de fondos', 'Use of funds'), nota:T('La nota', 'The note'), tramos:T('Tramos y calendario', 'Tranches and timeline'),
+    control:T('Control y riesgos', 'Controls and risks'), terreno:T('Terreno en Tequila', 'Land in Tequila'), pasos:T('Próximos pasos', 'Next steps')
+  })[id];
+
+  /* ---------- valores que cambian con el número de lotes ---------- */
+  function live(){
+    const n = state.lots;
+    return {
+      total: usd(total()),
+      land: usd(landUSD()),
+      split: T(`Nota ${usd(NOTE)} + terreno ${usd(landUSD())}`, `Note ${usd(NOTE)} + land ${usd(landUSD())}`),
+      lotsLabel: `${n} ${lotsWord(n)} · ${int(n*LOT_M2)} m²`,
+      totalLine: T(`Con esta selección, la inversión total es de <b>${usd(total())}</b>.`, `With this selection, total investment is <b>${usd(total())}</b>.`)
+    };
+  }
+  function applyLive(){
+    const v = live();
+    document.querySelectorAll('[data-live]').forEach(el => { const k = el.dataset.live; if (k === 'totalLine') el.innerHTML = v[k]; else if (v[k] != null) el.textContent = v[k]; });
+    document.querySelectorAll('[data-flex="lot"]').forEach(el => el.style.flex = LOT2 + ' 1 0');
+    document.querySelectorAll('[data-flex="mkt"]').forEach(el => el.style.flex = MKT + ' 1 0');
+    document.querySelectorAll('[data-flex="land"]').forEach(el => el.style.flex = landUSD() + ' 1 0');
+  }
+
+  /* =========================================================
+     CONTENIDO
+     ========================================================= */
+  const S = {};
+
+  S.hero = () => `
+    <header class="panel dark hero" id="inicio" data-title="${T('Inicio', 'Home')}">
+      <div class="hero-text">
+        <p class="eyebrow">Investment Paper · Tequila Malaco®</p>
+        <h1>${T('Financiar el <em>segundo lote</em> de Malaco', 'Financing Malaco’s <em>second lot</em>')}</h1>
+        <p class="sub">${T('Imagen 3.0, entrada ordenada a Estados Unidos y terreno en Tequila, Jalisco.', 'Image 3.0, a disciplined entry into the United States, and land in Tequila, Jalisco.')}</p>
+        <div class="hero-cta">
+          <a class="pill gold" href="#resumen">${T('Ver la propuesta', 'View the proposal')} <span aria-hidden="true">↓</span></a>
+          <a class="pill" href="#pasos">${T('Próximos pasos', 'Next steps')}</a>
+        </div>
+        <p class="hero-meta">${T('Borrador confidencial · 15 de octubre de 2026', 'Confidential draft · October 15, 2026')}</p>
+      </div>
+      <div class="hero-bottle"><img src="${ASSETS.hero}" alt="${T('Botella Malaco Añejo con la Imagen 3.0', 'Malaco Añejo bottle with Image 3.0')}"></div>
+    </header>`;
+
+  S.resumen = () => `
+    ${head('resumen', T('Resumen', 'Summary'),
+      T('El Lote 1 compró <em>aprendizaje</em>. El Lote 2 compra <em>ejecución</em>.', 'Lot 1 bought <em>learning</em>. Lot 2 buys <em>execution</em>.'),
+      T('Buscamos USD $125,000 en una nota puente para producir 10,000 botellas con la nueva Imagen 3.0 y entrar a Estados Unidos. Aparte, ofrecemos participar en un terreno en Tequila.',
+        'We are raising USD $125,000 through a bridge note to produce 10,000 bottles with the new Image 3.0 and enter the United States. Separately, we offer a stake in land in Tequila.'))}
+    <div class="bento">
+      <div class="tile ink s5 r2">
+        <span class="label">${T('Inversión total', 'Total investment')}</span>
+        <span class="huge" data-live="total"></span>
+        <span class="muted small" data-live="split"></span>
+        <div style="flex:1"></div>
+        <div class="stack" role="img" aria-label="${T('Composición de la inversión', 'Investment breakdown')}"><span data-flex="lot" style="background:#c69739"></span><span data-flex="mkt" style="background:#7d9be0"></span><span data-flex="land" style="background:#5fb396"></span></div>
+        <div class="legend" style="color:inherit">
+          <span><i style="background:#c69739"></i>${T('Lote', 'Lot')} <b style="color:inherit">${usd(LOT2)}</b></span>
+          <span><i style="background:#7d9be0"></i>Marketing <b style="color:inherit">${usd(MKT)}</b></span>
+          <span><i style="background:#5fb396"></i>${T('Terreno', 'Land')} <b style="color:inherit" data-live="land"></b></span>
+        </div>
+      </div>
+      <div class="tile s7">
+        <span class="label">${T('Nota puente', 'Bridge note')}</span>
+        <span class="big">${usd(NOTE)}</span>
+        <ul class="ticks">
+          <li>${T('8% de interés al año, pagado cada año', '8% interest per year, paid yearly')}</li>
+          <li>${T('24 meses, con pago anticipado sin penalización', '24 months, with penalty-free early repayment')}</li>
+          <li>${T('Garantía: el inventario del lote', 'Secured by the lot’s inventory')}</li>
+        </ul>
+      </div>
+      <div class="tile s7">
+        <span class="label">${T('Terreno en Tequila', 'Land in Tequila')} · <span data-live="lotsLabel"></span></span>
+        <span class="big" data-live="land"></span>
+        <ul class="ticks">
+          <li>${T('Recuperas tu capital al vender', 'You recover your capital on sale')}</li>
+          <li>${T('Más el 50% de la plusvalía', 'Plus 50% of the appreciation')}</li>
+          <li>${T('Plazo mínimo de 10 años', 'Minimum 10-year hold')}</li>
+        </ul>
+        <a class="pill sm" href="#terreno" style="align-self:flex-start">${T('Elegir número de lotes', 'Choose number of lots')} →</a>
+      </div>
+    </div>`;
+
+  S.porque = () => `
+    ${head('porque', T('Por qué Malaco', 'Why Malaco'),
+      T('No empezamos <em>de cero</em>', 'We are not starting <em>from zero</em>'),
+      T('El primer lote ya pagó lo más caro: permisos, estructura legal, desarrollo del producto y la prueba de que la gente lo compra y lo vuelve a comprar.', 'The first lot already paid for the hardest part: permits, legal structure, product development and proof that people buy it and come back for more.'))}
+    <div class="bento">
+      <div class="tile s3"><span class="big">$60K</span><span class="small muted">${T('invertidos en el Lote 1, incluido el arranque', 'invested in Lot 1, including start-up')}</span></div>
+      <div class="tile s3"><span class="big">~300</span><span class="small muted">${T('botellas vendidas en un año, sin canal formal', 'bottles sold in a year, with no formal channel')}</span></div>
+      <div class="tile s3"><span class="big">$100</span><span class="small muted">${T('precio en tienda en EE.UU., con clientes que repiten', 'U.S. shelf price, with repeat customers')}</span></div>
+      <div class="tile s3"><span class="big">50–60%</span><span class="small muted">${T('menos costo con los proveedores actuales', 'lower cost with current suppliers')}</span></div>
+    </div>
+    <div class="block">
+      <h3 class="h3">${T('Lo que aprendimos y lo que cambia', 'What we learned and what changes')}</h3>
+      <div class="shifts">
+        <div class="shift"><span class="from">${T('Asesoría y trámites costaron unos USD $15,000.', 'Advisory and filings cost about USD $15,000.')}</span><span class="arrow" aria-hidden="true">→</span><span class="to">${T('No se repite: los permisos y la base legal ya existen.', 'It won’t repeat: permits and the legal base are in place.')}</span></div>
+        <div class="shift"><span class="from">${T('El marketing externo, otros USD $15,000, no dio resultados.', 'Outside marketing, another USD $15,000, did not deliver.')}</span><span class="arrow" aria-hidden="true">→</span><span class="to">${T('Ahora cada gasto de marketing se mide y se liga a ventas.', 'Every marketing dollar is now measured and tied to sales.')}</span></div>
+        <div class="shift"><span class="from">${T('Vendimos lento porque no teníamos canal.', 'Sales were slow because we had no channel.')}</span><span class="arrow" aria-hidden="true">→</span><span class="to">${T('El Lote 2 entra con distribuidor e importador en EE.UU.', 'Lot 2 goes in through a U.S. distributor and importer.')}</span></div>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><span class="n">I</span><h3>${T('Producto listo', 'Product ready')}</h3><p>${T('Tequila autorizado y el líquido ya está disponible.', 'Authorized tequila, with the liquid already on hand.')}</p></div>
+      <div class="pillar"><span class="n">II</span><h3>${T('Marca con historia', 'A brand with heritage')}</h3><p>${T('Una identidad propia que ahora sube de nivel con la Imagen 3.0.', 'Its own identity, now elevated with Image 3.0.')}</p></div>
+      <div class="pillar"><span class="n">III</span><h3>${T('Puerta a EE.UU.', 'A door to the U.S.')}</h3><p>${T('Conversación activa con un distribuidor y un importador.', 'An active conversation with a distributor and an importer.')}</p></div>
+    </div>`;
+
+  S.marca = () => `
+    ${head('marca', T('Marca e Imagen 3.0', 'Brand and Image 3.0'),
+      T('Cada gota, <em>un tributo</em>.', 'Every drop, <em>a tribute</em>.'),
+      T('Malaco es el apodo de cariño de Malaquías. La marca honra a la familia Cuervo, rama Malaquías, y quiere enseñar a disfrutar el tequila genuino, con calma y conciencia.', 'Malaco is the affectionate nickname for Malaquías. The brand honors the Malaquías branch of the Cuervo family and wants to teach people to enjoy genuine tequila, slowly and mindfully.'))}
+    <div class="heritage"><strong>7</strong><span>${T('generaciones Malaquías Cuervo. La línea comienza en 1837.', 'generations of Malaquías Cuervo. The line begins in 1837.')}</span></div>
+    <div class="pillars">
+      <div class="pillar"><span class="n">01</span><h3>${T('Herencia', 'Heritage')}</h3><p>${T('Un legado familiar que trasciende el tiempo.', 'A family legacy that transcends time.')}</p></div>
+      <div class="pillar"><span class="n">02</span><h3>${T('Reivindicación', 'Vindication')}</h3><p>${T('Cambiar cómo ve el mundo al tequila: calidad y cultura.', 'Changing how the world sees tequila: quality and culture.')}</p></div>
+      <div class="pillar"><span class="n">03</span><h3>${T('Regreso al origen', 'Return to origin')}</h3><p>${T('Rescatar prácticas tradicionales y retribuir a la tierra.', 'Reviving traditional practices and giving back to the land.')}</p></div>
+    </div>
+    <div class="evo">
+      <figure class="evo-now">
+        <div class="art-card"><img class="line-art" src="${ASSETS.logoActual}" alt="${T('Logotipo registrado de Malaco con Don Malaco', 'Malaco’s registered logo featuring Don Malaco')}"></div>
+        <figcaption><span class="label">${T('Imagen actual', 'Current identity')}</span><span>${T('Don Malaco, el logotipo registrado.', 'Don Malaco, the registered logo.')}</span></figcaption>
+      </figure>
+      <span class="arrow" aria-hidden="true">→</span>
+      <figure>
+        ${photo(ASSETS.blanco, T('Botella Malaco Blanco con la Imagen 3.0', 'Malaco Blanco bottle with Image 3.0'), 'portrait')}
+        <figcaption><span class="label">Imagen 3.0</span><span>${T('Botella facetada, sello de cera y una etiqueta por expresión: verde agave para Blanco, vino para Reposado y negro con oro para Añejo.', 'A faceted bottle, a wax seal and one label per expression: agave green for Blanco, wine for Reposado, and black with gold for Añejo.')}</span></figcaption>
+      </figure>
+    </div>
+    ${rows([
+      [T('Para quién', 'Who it’s for'), T('Amantes de los destilados, bartenders, coleccionistas, viajeros culturales y mexicanos en el extranjero.', 'Spirits lovers, bartenders, collectors, cultural travelers and Mexicans abroad.')],
+      [T('Dónde se vende', 'Where it sells'), T('Bares, restaurantes y hoteles premium, tiendas selectas, catas y distribución internacional.', 'Premium bars, restaurants and hotels, select stores, tastings and international distribution.')],
+      [T('Qué la hace distinta', 'What sets it apart'), T('Además de la botella, una experiencia con historia, cultura y educación sobre el tequila.', 'Beyond the bottle, an experience built on history, culture and tequila education.')]
+    ])}`;
+
+  S.lote = () => `
+    ${head('lote', T('El segundo lote', 'The second lot'),
+      T('10,000 botellas de un líquido que <em>ya existe</em>', '10,000 bottles from liquid that <em>already exists</em>'),
+      T('Hay 10,000 litros listos, suficientes para 13,333 botellas. Producimos 10,000 y guardamos el resto como reserva.', 'There are 10,000 liters ready, enough for 13,333 bottles. We produce 10,000 and keep the rest in reserve.'))}
+    <div class="products">
+      ${[['Blanco', ASSETS.blanco, 4500, 6000, '4,500 L', '--sku-b'], ['Reposado', ASSETS.reposado, 4500, 6000, '4,500 L', '--sku-r'], ['Añejo', ASSETS.anejo, 1000, 1333, '1,000 L', '--sku-a']].map(p => `
+      <div class="product">
+        ${photo(p[1], 'Malaco ' + p[0], 'portrait')}
+        <div class="product-head"><h3>${p[0]}</h3><span class="big">${int(p[2])}</span></div>
+        <div class="bar" title="${p[0]}: ${int(p[2])} ${T('de', 'of')} ${int(p[3])}"><span class="cap" style="width:${(p[3]/6000*100).toFixed(2)}%"></span><span style="width:${(p[2]/6000*100).toFixed(2)}%;background:var(${p[5]})"></span></div>
+        <span class="small muted sub">${T('botellas de', 'bottles of')} ${int(p[3])} ${T('posibles', 'possible')} · ${p[4]}</span>
+      </div>`).join('')}
+    </div>
+    <div class="facts">
+      ${[T('Tequila, Jalisco', 'Tequila, Jalisco'), '750 ml', T('40% Alc. Vol.', '40% ABV'), T('Producto autorizado', 'Authorized product'), T('Unos 30 días de producción con insumos listos', 'About 30 days to produce once inputs arrive')].map(f => `<span class="chip">${f}</span>`).join('')}
+    </div>`;
+
+  S.numeros = () => `
+    ${head('numeros', T('Números por botella', 'Unit economics'),
+      T('Cuánto cuesta una botella y <em>cuánto deja</em>', 'What a bottle costs and <em>what it earns</em>'),
+      T('Costos en pesos, convertidos a $18 por dólar. Cada cifra ya incluye 30% extra como margen de seguridad.', 'Costs in pesos, converted at MXN $18 per dollar. Every figure already includes a 30% safety buffer.'))}
+    <div class="bento">
+      <div class="tile s5">
+        <h3 class="h3">${T('Producir una botella', 'Producing one bottle')}</h3>
+        <div>
+          ${[[T('Líquido', 'Liquid'), '$84.50', '$4.69'], [T('Botella, empaque y etiqueta', 'Bottle, packaging and label'), '$32.50', '$1.81'], [T('Embotellado y mano de obra', 'Bottling and labor'), '$39.00', '$2.17']].map(c => `<div class="cost"><span>${c[0]}</span><span class="mx num">MXN ${c[1]}</span><span class="us">${c[2]}</span></div>`).join('')}
+          <div class="cost sum"><span>${T('Total', 'Total')}</span><span class="mx num">MXN $156.00</span><span class="us">$8.67</span></div>
+        </div>
+        <p class="small muted">${T('Usamos el punto medio de cada rango estimado. El total va de MXN $143 a $169.', 'We use the midpoint of each estimated range. The total ranges from MXN $143 to $169.')}</p>
+      </div>
+      <div class="tile s7">
+        <h3 class="h3">${T('Costo total por botella', 'Total cost per bottle')}</h3>
+        <p class="small muted">${T('Todo lo que cuesta poner una botella en manos del importador: producción más su parte de los gastos del proyecto.', 'Everything it takes to put one bottle in the importer’s hands: production plus its share of project costs.')}</p>
+        <div class="blines">
+          ${bline(T('Producción', 'Production'), T('El total de la tabla anterior', 'The total from the previous table'), '$8.67', '', 100)}
+          ${bline(T('Capital de trabajo', 'Working capital'), T('$36,000 entre 10,000 botellas', '$36,000 across 10,000 bottles'), '$3.60', '', 41.5)}
+          ${bline(T('Plan de marketing', 'Marketing plan'), T('$25,000 entre 10,000 botellas', '$25,000 across 10,000 bottles'), '$2.50', '', 28.8)}
+          ${bline(T('Molde de la botella', 'Bottle mold'), T('$15,000 entre 10,000 botellas', '$15,000 across 10,000 bottles'), '$1.50', '', 17.3)}
+          ${bline(T('Impuesto de exportación', 'Export tax'), T('USD $1 por botella', 'USD $1 per bottle'), '$1.00', '', 11.5)}
+          ${bline(T('Logística', 'Logistics'), T('Flete, seguro y almacenaje; pendiente de cotización', 'Freight, insurance and storage; quote pending'), null)}
+        </div>
+        <div class="total-line"><span class="label">${T('Costo total conocido', 'Known total cost')}</span><span class="big">$17.27</span></div>
+      </div>
+    </div>
+    <div class="sim" id="sim">
+      <div class="sim-top">
+        <div class="block" style="gap:8px">
+          <h3 class="h3">${T('Si el importador paga…', 'If the importer pays…')}</h3>
+          <p class="small muted">${T('Elige un escenario o mueve el control.', 'Pick a scenario or move the slider.')}</p>
+        </div>
+        <div class="seg" role="group" aria-label="${T('Escenarios', 'Scenarios')}">
+          <button type="button" data-p="30">${T('Conservador', 'Conservative')} · $30</button>
+          <button type="button" data-p="40">Base · $40</button>
+          <button type="button" data-p="50">${T('Alto', 'High')} · $50</button>
+        </div>
+      </div>
+      <div class="block" style="gap:10px">
+        <div class="readout"><output id="pOut" for="price"></output><span>${T('por botella', 'per bottle')} · <span id="pShare"></span></span></div>
+        <label class="sr" for="price">${T('Precio que paga el importador por botella', 'Price the importer pays per bottle')}</label>
+        <input type="range" id="price" min="20" max="60" step="1" value="${state.price}">
+        <div class="scale"><span>$20</span><span>$30</span><span>$40</span><span>$50</span><span>$60</span></div>
+      </div>
+      <div class="block" style="gap:12px">
+        <span class="label">${T('De cada $100 que paga el consumidor', 'Of every $100 the consumer pays')}</span>
+        <div class="stack" aria-hidden="true"><span id="c1" style="background:var(--cost)"></span><span id="c2" style="background:var(--bar)"></span><span id="c3" style="background:var(--chain)"></span></div>
+        <div class="legend">
+          <span>${dot('--cost')}${T('Costo', 'Cost')} <b id="l1"></b></span>
+          <span>${dot('--bar')}${T('Ganancia de Malaco', 'Malaco’s profit')} <b id="l2"></b></span>
+          <span>${dot('--chain')}${T('Importador, distribuidor, tienda e impuestos', 'Importer, distributor, retailer and taxes')} <b id="l3"></b></span>
+        </div>
+      </div>
+      <div class="mini">
+        <div><span class="label">${T('Ganancia por botella', 'Profit per bottle')}</span><span class="v" id="oMargin"></span><span class="s">${T('Precio menos costo total', 'Price minus total cost')}</span></div>
+        <div><span class="label">${T('Ventas del lote', 'Lot revenue')}</span><span class="v" id="oRev"></span><span class="s">${T('Las 10,000 botellas', 'All 10,000 bottles')}</span></div>
+        <div><span class="label">${T('Para pagar la nota', 'To repay the note')}</span><span class="v" id="oRepay"></span><span class="s" id="oRepayS"></span></div>
+        <div><span class="label">${T('Punto de equilibrio', 'Break-even')}</span><span class="v" id="oBe"></span><span class="s">${T('Botellas para recuperar todos los costos e intereses', 'Bottles to recover all costs and interest')}</span></div>
+        <div><span class="label">${T('Ganancia del lote', 'Lot profit')}</span><span class="v" id="oLot"></span><span class="s">${T('Después de intereses', 'After interest')}</span></div>
+      </div>
+      <p class="small muted">${T('Antes de logística e impuestos. La clave de la negociación es este precio neto, no los $100 que paga el consumidor.', 'Before logistics and taxes. The key to the negotiation is this net price, not the $100 the consumer pays.')}</p>
+    </div>`;
+
+  S.eeuu = () => `
+    ${head('eeuu', T('Estados Unidos', 'United States'),
+      T('Entrar por etapas, con <em>compromisos por escrito</em>', 'Enter in stages, with <em>commitments in writing</em>'),
+      T('Antes de producir todo el lote necesitamos al menos una carta de intención (LOI), una orden de compra (PO) o un plan de distribución firmado. Esto es lo que debe responder el distribuidor:', 'Before producing the full lot we need at least a letter of intent (LOI), a purchase order (PO) or a signed distribution plan. These are the questions the distributor must answer:'))}
+    <div class="items">
+      ${[
+        [T('¿A qué precio compra cada botella?', 'What will you pay per bottle?'), T('Define cuánto ingresa y cómo se paga la nota.', 'It sets our revenue and how the note gets repaid.')],
+        [T('¿Qué volumen inicial compromete?', 'What initial volume will you commit to?'), T('Evita producir sin tener a quién vender.', 'It keeps us from producing without a buyer.')],
+        [T('¿En qué estados vende?', 'Which states will you sell in?'), T('Cambian las reglas, la logística y las cuentas.', 'Rules, logistics and accounts change by state.')],
+        [T('¿Quién es el importador?', 'Who is the importer?'), T('De él dependen los permisos (TTB y COLA), los impuestos y los tiempos.', 'Permits (TTB and COLA), taxes and timing depend on them.')],
+        [T('¿Bares y restaurantes, tiendas o ambos?', 'Bars and restaurants, stores or both?'), T('Cambia el precio, el empaque y las activaciones.', 'Price, packaging and activations change.')],
+        [T('¿Cuándo paga?', 'When do you pay?'), T('Define cuánto efectivo necesitamos mientras cobramos.', 'It sets how much cash we need while we collect.')],
+        [T('¿Qué apoyo de marketing necesita?', 'What marketing support do you need?'), T('Define el presupuesto y quién hace qué.', 'It sets the budget and who does what.')],
+        [T('¿En cuánto tiempo mueve el primer volumen?', 'How fast will the first volume move?'), T('Define qué tan rápido se paga la nota.', 'It sets how fast the note gets repaid.')]
+      ].map((q,i) => `<div class="item"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${q[0]}</h3><p>${q[1]}</p></div>`).join('')}
+    </div>`;
+
+  S.fondos = () => `
+    ${head('fondos', T('Uso de fondos', 'Use of funds'),
+      T('En qué se usan los <em>$125,000</em>', 'Where the <em>$125,000</em> goes'),
+      T('El dinero entra a una cuenta exclusiva del proyecto y se gasta contra un presupuesto aprobado.', 'The money goes into a dedicated project account and is spent against an approved budget.'))}
+    <div class="block" style="gap:14px">
+      <div class="meter-top">
+        <div><span class="label">${T('Asignado', 'Allocated')}</span><div class="big">$125,000 <span class="muted" style="font-size:.5em">/ $125,000</span></div></div>
+        ${pending(T('Logística sin presupuesto', 'Logistics not yet budgeted'))}
+      </div>
+      <div class="bar" style="height:14px"><span style="width:100%"></span></div>
+      <p class="small muted">${T('Para cuadrar, el capital de trabajo bajó $722 y Malaco cubre esa diferencia.', 'To balance, working capital dropped by $722 and Malaco covers the difference.')}</p>
+    </div>
+    <div class="blines">
+      ${bline(T('Capital de trabajo', 'Working capital'), T('Oficina, administración y contabilidad por 24 meses (unos $1,470 al mes).', 'Office, administration and accounting for 24 months (about $1,470 a month).'), '$35,278', T('28.2% de la nota', '28.2% of the note'), 100)}
+      ${bline(T('Plan de marketing', 'Marketing plan'), T('Lanzamiento (fotos, materiales, catas) y apoyo en puntos de venta. Se diseña y se libera por fases.', 'Launch (photos, materials, tastings) and point-of-sale support. Designed and released in phases.') + ' ' + pending(T('Plan por diseñar', 'Plan to be designed')), '$25,000', T('20% de la nota', '20% of the note'), 70.87, '--mkt')}
+      ${bline(T('Producción y embotellado', 'Production and bottling'), T('Llenado, control de calidad y liberación del lote.', 'Filling, quality control and lot release.'), '$21,667', T('17.3% de la nota', '17.3% of the note'), 61.42)}
+      ${bline(T('Insumos y empaque', 'Inputs and packaging'), T('Botella, etiqueta, caja, tapa y cápsula.', 'Bottle, label, box, closure and capsule.'), '$18,056', T('14.4% de la nota', '14.4% of the note'), 51.18)}
+      ${bline(T('Molde de la botella', 'Bottle mold'), T('Diseño, molde y muestras de la nueva botella Imagen 3.0.', 'Design, mold and samples of the new Image 3.0 bottle.'), '$15,000', T('12% de la nota', '12% of the note'), 42.52)}
+      ${bline(T('Exportación', 'Export'), T('Impuesto de USD $1 por botella. Los trámites se suman con la cotización.', 'USD $1-per-bottle tax. Filing costs come with the quote.'), '$10,000', T('8% de la nota', '8% of the note'), 28.35)}
+      ${bline(T('Logística', 'Logistics'), T('Flete, seguro y almacenaje.', 'Freight, insurance and storage.'), null)}
+    </div>
+    <p class="small muted">${T('El líquido ya existe y no se paga con la nota; vale unos USD $46,944 y ya está incluido en el costo por botella. Cifras redondeadas.', 'The liquid already exists and is not paid for by the note; it is worth about USD $46,944 and is already in the cost per bottle. Rounded figures.')}</p>`;
+
+  S.nota = () => `
+    ${head('nota', T('La nota', 'The note'),
+      T('Un préstamo con <em>fecha, tasa y garantía</em>', 'A loan with a <em>date, a rate and collateral</em>'),
+      T('Es más simple y seguro que una nota convertible porque no depende de una valuación que todavía no existe.', 'It is simpler and safer than a convertible note because it doesn’t depend on a valuation that doesn’t exist yet.'))}
+    <div class="bento">
+      <div class="tile s4"><span class="label">${T('Mes 12', 'Month 12')}</span><span class="big">$10,000</span><span class="small muted">${T('Interés del primer año', 'First-year interest')}</span></div>
+      <div class="tile s4"><span class="label">${T('Mes 24', 'Month 24')}</span><span class="big">$135,000</span><span class="small muted">${T('Interés del segundo año más el capital', 'Second-year interest plus principal')}</span></div>
+      <div class="tile ink s4"><span class="label">${T('Total', 'Total')}</span><span class="big">$145,000</span><span class="small muted">${T('Si no hay pagos anticipados', 'With no early repayments')}</span></div>
+      <div class="tile s12">
+        <h3 class="h3">${T('Pagos anticipados con las ventas', 'Early repayment from sales')}</h3>
+        <p class="small" style="color:var(--ink-2);max-width:70ch">${T('Del 20% al 30% de lo que se cobre del lote se usa para adelantar pagos: primero intereses y luego capital, sin penalización. Por ejemplo, si en un trimestre se cobran $40,000, entre $8,000 y $12,000 van a la nota.', 'Between 20% and 30% of what the lot collects goes to early repayment: interest first, then principal, with no penalty. For example, if $40,000 comes in during a quarter, $8,000 to $12,000 goes to the note.')}</p>
+        <div class="stack" aria-hidden="true"><span style="flex:20;background:var(--bar)"></span><span style="flex:10;background:var(--accent-2)"></span><span style="flex:70;background:var(--track)"></span></div>
+        <div class="legend"><span>${dot('--bar')}${T('20% mínimo', '20% minimum')}</span><span>${dot('--accent-2')}${T('Hasta 30%', 'Up to 30%')}</span><span>${dot('--track')}${T('Operación de Malaco', 'Malaco operations')}</span></div>
+      </div>
+    </div>
+    ${rows([
+      [T('Monto', 'Amount'), T('USD $125,000: $100,000 para el lote y $25,000 para marketing', 'USD $125,000: $100,000 for the lot and $25,000 for marketing')],
+      [T('Quién recibe', 'Borrower'), 'José Malaquías Cuervo y Descendientes, S.A. de C.V.'],
+      [T('Interés', 'Interest'), T('8% simple al año, pagado cada año', '8% simple per year, paid yearly')],
+      [T('Plazo', 'Term'), T('24 meses desde el primer desembolso', '24 months from the first disbursement')],
+      [T('Garantía', 'Collateral'), T('El inventario del segundo lote y, si se puede, lo que se cobre de sus ventas', 'The second lot’s inventory and, where possible, receivables from its sales')],
+      [T('Documentos', 'Documents'), T('Contrato de préstamo, pagaré y prenda sobre el inventario', 'Loan agreement, promissory note and a pledge over the inventory')],
+      [T('Uso del dinero', 'Use of money'), T('Solo el segundo lote, su marketing y su lanzamiento', 'Only the second lot, its marketing and its launch')],
+      [T('Incumplimiento', 'Default'), T('No pagar, usar el dinero en otra cosa, ocultar ventas o disponer del inventario sin permiso', 'Non-payment, using the money elsewhere, hiding sales or disposing of inventory without consent')],
+      [T('Ley aplicable', 'Governing law'), T('Por definir con los abogados de ambas partes', 'To be agreed with both parties’ lawyers')],
+      [T('Carácter', 'Nature'), T('Propuesta no vinculante, salvo confidencialidad, exclusividad si aplica y gastos legales si se acuerdan', 'A non-binding proposal, except for confidentiality, exclusivity if applicable and legal costs if agreed')]
+    ])}`;
+
+  const PHASES = () => [
+    {name:T('Firma', 'Signing'), s:0, e:1},
+    {name:T('Molde e insumos', 'Mold and inputs'), s:1, e:2},
+    {name:T('Acuerdo con distribuidor', 'Distributor agreement'), s:1, e:3},
+    {name:T('Producción', 'Production'), s:2, e:3},
+    {name:T('Exportación y COLA', 'Export and COLA'), s:3, e:5},
+    {name:T('Lanzamiento en EE.UU.', 'U.S. launch'), s:4, e:8},
+    {name:T('Ventas y pagos', 'Sales and repayment'), s:5, e:24, long:true}
+  ];
+
+  S.tramos = () => `
+    ${head('tramos', T('Tramos y calendario', 'Tranches and timeline'),
+      T('El dinero se libera <em>por avances</em>', 'Money is released <em>as milestones are met</em>'),
+      T('Cuatro entregas, cada una contra un avance que se puede comprobar. Si lo prefieres, puede entregarse todo al inicio a cambio de más controles: reportes mensuales, comprobantes y revisión de partidas clave.', 'Four releases, each tied to a milestone you can verify. If you prefer, it can all be released up front in exchange for tighter controls: monthly reports, receipts and review of key line items.'))}
+    <div class="block" style="gap:14px">
+      <div class="stack" role="img" aria-label="${T('Tramo 1: $35,000; tramo 2: $35,000; tramo 3: $30,000; tramo 4: $25,000', 'Tranche 1: $35,000; tranche 2: $35,000; tranche 3: $30,000; tranche 4: $25,000')}"><span style="flex:35;background:var(--t1)"></span><span style="flex:35;background:var(--t2)"></span><span style="flex:30;background:var(--t3)"></span><span style="flex:25;background:var(--mkt)"></span></div>
+      <div class="tranches">
+        ${[[35,'--t1',T('Al firmar: cuenta del proyecto abierta, presupuesto final y molde definido.', 'At signing: project account open, final budget and mold defined.')],
+           [35,'--t2',T('Al ordenar insumos, con cotizaciones cerradas y empaque validado.', 'When inputs are ordered, with final quotes and packaging approved.')],
+           [30,'--t3',T('Con una LOI, una PO o un plan de distribución firmado.', 'With a signed LOI, PO or distribution plan.')],
+           [25,'--mkt',T('Por fases, conforme se aprueba el plan de marketing.', 'In phases, as the marketing plan is approved.')]]
+          .map((r,i) => `<div class="tranche"><span class="label"><i style="background:var(${r[1]})"></i>${T('Tramo', 'Tranche')} ${i+1}</span><span class="v">${usd(r[0]*1000)}</span><p>${r[2]}</p></div>`).join('')}
+      </div>
+    </div>
+    <div class="block">
+      <h3 class="h3">${T('Calendario de 24 meses', '24-month timeline')}</h3>
+      <div class="gantt-wrap"><div class="gantt" id="gantt" role="img" aria-label="${T('Calendario ilustrativo de la nota en 24 meses', 'Illustrative 24-month timeline for the note')}"></div></div>
+      <div class="legend">
+        <span><i style="background:var(--bar);border-radius:3px;transform:rotate(45deg) scale(.85)"></i>${T('Entrega de dinero (tramo)', 'Money released (tranche)')}</span>
+        <span><i style="background:var(--land);border-radius:3px;transform:rotate(45deg) scale(.85)"></i>${T('Pago al inversionista', 'Payment to investor')}</span>
+        <span>${dot('--bar')}${T('Reporte mensual', 'Monthly report')}</span>
+        <span>${dot('--t3')}${T('Reporte trimestral', 'Quarterly report')}</span>
+      </div>
+      <p class="small muted">${T('Fechas ilustrativas; se confirman con los tiempos reales de proveedores.', 'Illustrative dates; confirmed with actual supplier lead times.')}</p>
+    </div>`;
+
+  S.control = () => `
+    ${head('control', T('Control y riesgos', 'Controls and risks'),
+      T('Confianza con <em>evidencia</em>', 'Trust backed by <em>evidence</em>'),
+      T('Controles simples: una cuenta exclusiva, comprobantes de cada gasto y reportes periódicos.', 'Simple controls: a dedicated account, receipts for every expense and regular reports.'))}
+    ${rows([
+      [T('Presupuesto', 'Budget'), T('Cualquier gasto fuera del presupuesto, o 10% mayor a su partida, necesita tu aprobación.', 'Any expense outside the budget, or 10% over its line, needs your approval.')],
+      [T('Comprobantes', 'Receipts'), T('Facturas, órdenes de compra y contratos de cada gasto.', 'Invoices, purchase orders and contracts for every expense.')],
+      [T('Inventario', 'Inventory'), T('Registro por expresión, lote, ubicación y estado.', 'Tracked by expression, lot, location and status.')],
+      [T('Comité', 'Committee'), T('Malaco y el inversionista revisan avances cada mes durante el arranque.', 'Malaco and the investor review progress monthly during start-up.')]
+    ])}
+    <div class="block">
+      <div class="meter-top"><h3 class="h3">${T('Reportes', 'Reports')}</h3><span class="label">${T('12 en 24 meses', '12 over 24 months')}</span></div>
+      <div class="strip" id="strip" role="img" aria-label="${T('Reportes mensuales en los meses 1 a 6 y trimestrales en los meses 9 a 24', 'Monthly reports in months 1 to 6 and quarterly reports in months 9 to 24')}"></div>
+      <div class="strip-axis" id="stripAxis" aria-hidden="true"></div>
+      <div class="legend">
+        <span>${dot('--bar')}${T('Mensual: producción, gastos, inventario, ventas y riesgos', 'Monthly: production, spending, inventory, sales and risks')}</span>
+        <span>${dot('--t3')}${T('Trimestral: ventas, cobranza, inventario y pagos', 'Quarterly: sales, collections, inventory and payments')}</span>
+      </div>
+    </div>
+    <div class="block">
+      <h3 class="h3">${T('Qué puede salir mal y qué hacemos', 'What could go wrong and what we do')}</h3>
+      <div class="items">
+        ${[
+          [T('Se retrasa la botella nueva', 'The new bottle is delayed'), T('Proveedor alternativo, calendario con holgura y, si hace falta, una botella estándar temporal.', 'A backup supplier, slack in the calendar and, if needed, a temporary standard bottle.')],
+          [T('El distribuidor no compromete volumen', 'The distributor won’t commit volume'), T('Producir por fases, exigir LOI o PO antes del tramo 3 y tener un plan B en México.', 'Produce in phases, require an LOI or PO before tranche 3 and keep a plan B in Mexico.')],
+          [T('Paga menos de lo esperado', 'They pay less than expected'), T('Ajustar la mezcla de productos, el empaque o el volumen. El 30% extra en costos ya cubre parte.', 'Adjust the product mix, packaging or volume. The 30% cost buffer already covers part of it.')],
+          [T('El importador tarda con los permisos', 'The importer is slow with permits'), T('Un responsable, una lista de pasos de TTB y COLA, y documentos listos antes del envío.', 'One owner, a TTB and COLA checklist, and documents ready before shipping.')],
+          [T('Se vende lento', 'Sales are slow'), T('Cuentas objetivo, catas, marketing medible y metas de venta por canal.', 'Target accounts, tastings, measurable marketing and sales goals by channel.')],
+          [T('El marketing no funciona otra vez', 'Marketing fails again'), T('Plan por fases con metas en cada una; si una fase no rinde, no se libera la siguiente.', 'A phased plan with goals for each phase; if one phase underperforms, the next isn’t released.')],
+          [T('Sube el costo de envío', 'Shipping costs rise'), T('Reserva para imprevistos y revisión del precio de venta antes de enviar.', 'A contingency reserve and a price review before shipping.')],
+          [T('No alcanza para pagar a tiempo', 'Cash runs short for repayment'), T('El inventario respalda la nota y una parte de cada venta se aparta para pagarla.', 'The inventory secures the note and part of every sale is set aside to repay it.')]
+        ].map((q,i) => `<div class="item"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${q[0]}</h3><p>${q[1]}</p></div>`).join('')}
+      </div>
+    </div>`;
+
+  S.terreno = () => `
+    ${head('terreno', T('Terreno en Tequila', 'Land in Tequila'),
+      T('Un terreno con <em>vista a la barranca</em>', 'Land <em>overlooking the barranca</em>'),
+      T('Lotes de 300 m² en el pueblo de Tequila, Jalisco. Tú pones el capital; después de al menos 10 años, al vender, recuperas tu capital más el 50% de la plusvalía.', '300 m² lots in the town of Tequila, Jalisco. You provide the capital; after at least 10 years, on sale, you recover it plus 50% of the appreciation.'))}
+    <div class="block" style="gap:12px">
+      <div class="gallery">
+        ${photo(ASSETS.land[0], T('Imagen de referencia: campos de agave en Jalisco', 'Reference image: agave fields in Jalisco'), 'wide', `<span class="ref-tag">${T('Imagen de referencia', 'Reference image')}</span>`)}
+        ${photo(ASSETS.land[1], T('Imagen de referencia: tierras de agave', 'Reference image: agave land'), 'wide', `<span class="ref-tag">${T('Imagen de referencia', 'Reference image')}</span>`)}
+      </div>
+      <p class="small muted">${T('Imágenes de referencia tomadas de tequilamalaco.com. Muestran el paisaje de la región, no el terreno ofrecido.', 'Reference images from tequilamalaco.com. They show the regional landscape, not the land on offer.')}</p>
+    </div>
+    <div class="block">
+      <div class="lots" id="lots" role="group" aria-label="${T('Número de lotes', 'Number of lots')}">
+        ${[1,2,3].map(n => `
+        <button class="lot" type="button" data-n="${n}" aria-pressed="${state.lots === n}">
+          <span class="label">${n} ${lotsWord(n)}</span>
+          <span class="area">${int(n*LOT_M2)} <small>m²</small></span>
+          <span class="parcels" aria-hidden="true">${[1,2,3].map(k => `<i${k <= n ? ' class="on"' : ''}></i>`).join('')}</span>
+          <span class="price"><strong>USD ${usd(n*LOT_MXN/FX)}</strong><span>MXN ${usd(n*LOT_MXN)}</span></span>
+        </button>`).join('')}
+      </div>
+      <p class="totalnote" data-live="totalLine"></p>
+    </div>
+    ${rows([
+      [T('A nombre de', 'Titled to'), 'José Malaquías Cuervo y Descendientes, S.A. de C.V.'],
+      [T('Plazo', 'Holding period'), T('Mínimo 10 años antes de vender', 'At least 10 years before sale')],
+      [T('Al vender', 'On sale'), T('Recuperas tu capital más el 50% de la plusvalía; el otro 50% queda para la empresa', 'You recover your capital plus 50% of the appreciation; the other 50% stays with the company')],
+      [T('Precio', 'Price'), T('$360,000 MXN por lote ($1,200 por m²)', 'MXN $360,000 per lot (MXN $1,200 per m²)')]
+    ])}
+    <div class="sim" id="appSim">
+      <div class="block" style="gap:8px">
+        <h3 class="h3">${T('¿Cuánto podrías recibir?', 'What could you receive?')}</h3>
+        <p class="small muted">${T('Supuesto ilustrativo, no una proyección del valor del terreno. Ajusta la apreciación anual y los años hasta la venta.', 'An illustrative assumption, not a forecast of the land’s value. Adjust annual appreciation and years until sale.')}</p>
+      </div>
+      <div class="bento" style="gap:24px">
+        <div class="s6 block" style="gap:10px">
+          <div class="readout"><output id="rOut" for="rate"></output><span>${T('de apreciación al año', 'appreciation per year')}</span></div>
+          <label class="sr" for="rate">${T('Apreciación anual del terreno', 'Annual land appreciation')}</label>
+          <input type="range" id="rate" min="0" max="12" step="0.5" value="${state.rate}">
+          <div class="scale"><span>0%</span><span>4%</span><span>8%</span><span>12%</span></div>
+        </div>
+        <div class="s6 block" style="gap:10px">
+          <div class="readout"><output id="yOut" for="years"></output><span>${T('hasta la venta', 'until sale')}</span></div>
+          <label class="sr" for="years">${T('Años hasta la venta, mínimo 10', 'Years until sale, minimum 10')}</label>
+          <input type="range" id="years" min="10" max="20" step="1" value="${state.years}">
+          <div class="scale"><span>10</span><span>15</span><span>20</span></div>
+        </div>
+      </div>
+      <div class="block" style="gap:12px">
+        <div class="stack" aria-hidden="true"><span id="a1" style="background:var(--land)"></span><span id="a2" style="background:var(--bar)"></span><span id="a3" style="background:var(--accent-2)"></span></div>
+        <div class="legend">
+          <span>${dot('--land')}${T('Tu capital', 'Your capital')} <b id="aL1"></b></span>
+          <span>${dot('--bar')}${T('Tu 50% de la plusvalía', 'Your 50% of the appreciation')} <b id="aL2"></b></span>
+          <span>${dot('--accent-2')}${T('50% para la empresa', '50% to the company')} <b id="aL3"></b></span>
+        </div>
+      </div>
+      <div class="mini">
+        <div><span class="label">${T('Valor de venta', 'Sale value')}</span><span class="v" id="aSale"></span><span class="s">${T('Con estos supuestos', 'Under these assumptions')}</span></div>
+        <div><span class="label">${T('Plusvalía', 'Appreciation')}</span><span class="v" id="aGain"></span><span class="s">${T('Venta menos compra', 'Sale minus purchase')}</span></div>
+        <div><span class="label">${T('Recibes en total', 'You receive in total')}</span><span class="v" id="aInv"></span><span class="s" id="aInvS"></span></div>
+      </div>
+    </div>
+    <div class="casa">
+      <div class="art-card"><img class="line-art" src="${ASSETS.penca}" alt="${T('Ilustración de la marca: piña de agave con coa', 'Brand illustration: an agave piña with a coa')}"></div>
+      <div class="block">
+        <span class="eyebrow">${T('Visión', 'Vision')}</span>
+        <h3 class="sec-title" style="font-size:clamp(1.8rem, 1.3rem + 2vw, 2.8rem)">Casa Malaco</h3>
+        <p class="lead">${T('Un espacio de la marca en Tequila para catas y visitas de distribuidores. A futuro, una pequeña destiladora.', 'A brand home in Tequila for tastings and distributor visits. In the future, a small distillery.')}</p>
+      </div>
+    </div>`;
+
+  S.pasos = () => `
+    ${head('pasos', T('Próximos pasos', 'Next steps'),
+      T('Lo que sigue para <em>cerrar</em>', 'What it takes <em>to close</em>'),
+      T('La reunión es para acordar estos puntos. Los detalles legales vienen después, con abogados.', 'The meeting is to agree on these points. Legal details come afterwards, with lawyers.'))}
+    <div class="items">
+      ${[
+        [T('Precio y volumen con el distribuidor', 'Price and volume with the distributor'), T('Acordar precio por botella, volumen inicial, estados e importador, y obtener LOI o PO.', 'Agree on price per bottle, initial volume, states and importer, and get an LOI or PO.')],
+        [T('Cómo entra el dinero', 'How the money comes in'), T('Elegir entre cuatro tramos o un solo pago al inicio.', 'Choose between four tranches or a single up-front payment.')],
+        [T('Presupuesto final', 'Final budget'), T('Cerrar cotizaciones de botella, empaque y logística, y diseñar el plan de marketing por fases.', 'Close quotes for bottle, packaging and logistics, and design the phased marketing plan.')],
+        [T('Terreno', 'Land'), T('Definir el número de lotes y firmar el esquema de capital más 50% de la plusvalía.', 'Set the number of lots and sign the capital-plus-50% structure.')],
+        [T('Inventario en garantía', 'Inventory as collateral'), T('Identificar lote, litros, botellas y ubicación, y asegurarlo durante producción y transporte.', 'Identify lot, liters, bottles and location, and insure it through production and transport.')],
+        [T('Permisos en EE.UU.', 'U.S. permits'), T('Definir responsable, tiempos y costo de TTB, COLA y etiquetado.', 'Set the owner, timing and cost for TTB, COLA and labeling.')],
+        [T('Moneda y reportes', 'Currency and reports'), T('Acordar si el contrato va en dólares o pesos y el formato de los reportes.', 'Agree whether the contract is in dollars or pesos and the report format.')],
+        [T('Documentos', 'Documents'), T('Los abogados preparan contrato, pagaré y prenda; se confirman los poderes de firma.', 'Lawyers draft the loan agreement, promissory note and pledge; signing authority is confirmed.')]
+      ].map((q,i) => `<div class="item"><span class="n">${String(i+1).padStart(2,'0')}</span><h3>${q[0]}</h3><p>${q[1]}</p></div>`).join('')}
+    </div>
+    <p class="closing-quote">${T('“Malaco ya pagó el aprendizaje caro. Esta ronda financia la ejecución disciplinada de un segundo lote con mejor costo, una marca más fuerte y una mejor ruta comercial.”', '“Malaco has already paid for the expensive learning. This round funds the disciplined execution of a second lot with better costs, a stronger brand and a clearer route to market.”')}</p>`;
+
+  const FOOT = () => `
+    <footer class="foot">
+      <div><span class="brand">MALACO<sup>®</sup></span><p style="margin-top:10px">Tequila, Jalisco — México</p></div>
+      <div>
+        <p>${T('Borrador confidencial para discusión con inversionistas y distribuidores. No es una oferta pública de valores ni asesoría legal, fiscal o financiera. La estructura final debe revisarse con abogados en México y, si aplica, en Estados Unidos.', 'Confidential draft for discussion with investors and distributors. This is not a public securities offering or legal, tax or financial advice. The final structure must be reviewed by lawyers in Mexico and, where applicable, in the United States.')}</p>
+        <p>${T('Tipo de cambio de referencia: $18.00 MXN por dólar (15 de octubre de 2026). Fuentes: Brand Book Malaco V1, propuestas de identidad e información del equipo; TTB, SEC y DISCUS.', 'Reference exchange rate: MXN $18.00 per USD (October 15, 2026). Sources: Malaco Brand Book V1, identity proposals and team information; TTB, SEC and DISCUS.')}</p>
+      </div>
+    </footer>`;
+
+  /* =========================================================
+     RENDER
+     ========================================================= */
+  const main = $('main'), menu = $('menu'), menuBtn = $('menuBtn');
+  let spy = null, current = 'inicio';
+
+  function render(){
+    document.documentElement.lang = state.lang;
+    $('nav').setAttribute('aria-label', T('Navegación', 'Navigation'));
+    $('langSlot').innerHTML = langSwitch();
+    menuBtn.textContent = T('Índice', 'Contents');
+    $('menuClose').textContent = T('Cerrar', 'Close');
+    menu.setAttribute('aria-label', T('Índice de la propuesta', 'Proposal contents'));
+    $('menuList').innerHTML = `<li><a href="#inicio" data-id="inicio"><span>00</span>${T('Inicio', 'Home')}</a></li>` +
+      ORDER.map(([id], i) => `<li><a href="#${id}" data-id="${id}"><span>${String(i+1).padStart(2,'0')}</span>${TITLE(id)}</a></li>`).join('');
+    main.innerHTML = S.hero() + ORDER.map(([id, theme], i) => `<section class="panel ${theme}" id="${id}" data-title="${TITLE(id)}" aria-labelledby="h-${id}"><span class="sec-num" aria-hidden="true">${String(i+1).padStart(2,'0')}</span><div class="wrap">${S[id]()}</div></section>`).join('') + FOOT();
+    applyLive();
+    bindSim(); bindGantt(); bindStrip(); bindLots(); bindApp(); bindSpy();
+  }
+
+  /* ---------- índice ---------- */
+  function setMenu(open){
+    menu.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) { const a = menu.querySelector('a[aria-current="true"]') || menu.querySelector('a'); if (a) a.focus(); }
+    else menuBtn.focus();
+  }
+  menuBtn.addEventListener('click', () => setMenu(menu.hidden));
+  $('menuClose').addEventListener('click', () => setMenu(false));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) { menu.hidden = true; menuBtn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) setMenu(false); });
+
+  /* ---------- idioma ---------- */
+  document.addEventListener('click', e => {
+    const b = e.target.closest('.lang button');
+    if (!b || b.dataset.lang === state.lang) return;
+    state.lang = b.dataset.lang;
+    try { localStorage.setItem('malaco-lang-v2', state.lang); } catch (err) {}
+    const keep = current;
+    render();
+    const el = $(keep);
+    if (el && keep !== 'inicio') el.scrollIntoView({behavior:'auto'});
+  });
+
+  /* ---------- sección actual y progreso ---------- */
+  function bindSpy(){
+    if (spy) spy.disconnect();
+    const where = $('where');
+    const setCurrent = id => {
+      current = id;
+      const el = $(id);
+      where.textContent = el ? el.dataset.title : '';
+      menu.querySelectorAll('a').forEach(a => a.dataset.id === id ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'));
+    };
+    setCurrent(current && $(current) ? current : 'inicio');
+    if (!('IntersectionObserver' in window)) return;
+    spy = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) setCurrent(en.target.id); });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    main.querySelectorAll('.panel').forEach(p => spy.observe(p));
+  }
+  const prog = $('prog');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(() => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      prog.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+      ticking = false;
+    });
+  }, {passive:true});
+
+  /* ---------- simulador de precio ---------- */
+  function bindSim(){
+    const price = $('price');
+    if (!price) return;
+    const btns = Array.from(document.querySelectorAll('#sim .seg button'));
+    function update(){
+      const p = Number(price.value); state.price = p;
+      const margin = p - ALLIN;
+      const repay = Math.ceil((NOTE + INTEREST) / p);
+      const be = Math.ceil((ALLIN*N + INTEREST) / p);
+      const lot = margin*N - INTEREST;
+      const pctLot = (repay/N*100).toFixed(1).replace('.0', '');
+      $('pOut').textContent = usd(p);
+      $('pShare').textContent = T(p + '% del precio en tienda', p + '% of the shelf price');
+      $('c1').style.flex = ALLIN + ' 1 0';
+      $('c2').style.flex = (p - ALLIN) + ' 1 0';
+      $('c3').style.flex = (100 - p) + ' 1 0';
+      $('l1').textContent = usd(ALLIN, 2);
+      $('l2').textContent = usd(margin, 2);
+      $('l3').textContent = usd(100 - p, 2);
+      $('oMargin').textContent = usd(margin, 2);
+      $('oRev').textContent = usd(p*N);
+      $('oRepay').textContent = int(repay);
+      $('oRepayS').textContent = T(`Botellas: el ${pctLot}% del lote cubre los $145,000`, `Bottles: ${pctLot}% of the lot covers the $145,000`);
+      $('oBe').textContent = int(be);
+      $('oLot').textContent = usd(Math.round(lot));
+      btns.forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.p) === p)));
+    }
+    price.addEventListener('input', update);
+    btns.forEach(b => b.addEventListener('click', () => { price.value = b.dataset.p; update(); }));
+    update();
+  }
+
+  /* ---------- calendario ---------- */
+  function bindGantt(){
+    const gantt = $('gantt');
+    if (!gantt) return;
+    const M = 24, pct = m => (m/M*100) + '%';
+    const points = [{m:0, l:'T1', k:'in'}, {m:1, l:'T2', k:'in', below:true}, {m:3, l:'T3', k:'in'}, {m:4, l:'T4', k:'in', below:true}, {m:12, l:'$10K', k:'out'}, {m:24, l:'$135K', k:'out'}];
+    let h = '';
+    PHASES().forEach(p => { h += `<div class="g-row"><div class="g-label">${p.name}</div><div class="g-track"><span class="g-bar${p.long ? ' long' : ''}" title="${p.name}: ${T('mes', 'month')} ${p.s}–${p.e}" style="left:${pct(p.s)};width:${pct(p.e - p.s)}"></span></div></div>`; });
+    h += `<div class="g-row money"><div class="g-label sub">${T('Dinero', 'Money')}</div><div class="g-track">`;
+    points.forEach(pt => { const edge = pt.m === 0 ? ' first' : (pt.m === M ? ' last' : ''); h += `<span class="g-pt ${pt.k}" style="left:${pct(pt.m)}"></span><span class="g-pt-l${edge}${pt.below ? ' below' : ''}" style="left:${pct(pt.m)}">${pt.l}</span>`; });
+    h += `</div></div><div class="g-row"><div class="g-label sub">${T('Reportes', 'Reports')}</div><div class="g-track">`;
+    for (let m = 1; m <= 6; m++) h += `<span class="g-dot" style="left:${pct(m)}"></span>`;
+    for (let m = 9; m <= 24; m += 3) h += `<span class="g-dot q" style="left:${pct(m)}"></span>`;
+    h += `</div></div><div class="g-row"><div></div><div class="g-axis">`;
+    for (let m = 0; m <= 24; m += 3) h += `<span style="left:${pct(m)}${m === 24 ? ';transform:translateX(-100%)' : (m === 0 ? ';transform:none' : '')}">${m === 0 ? T('Mes 0', 'Month 0') : (m === 24 ? T('Mes 24', 'Month 24') : m)}</span>`;
+    h += `</div></div>`;
+    gantt.innerHTML = h;
+  }
+
+  /* ---------- reportes ---------- */
+  function bindStrip(){
+    const strip = $('strip');
+    if (!strip) return;
+    let s = '', a = '';
+    for (let m = 1; m <= 24; m++){
+      const cls = m <= 6 ? 'm' : (m % 3 === 0 ? 'q' : '');
+      s += `<span class="${cls}" title="${T('Mes', 'Month')} ${m}"></span>`;
+      a += `<span>${m}</span>`;
+    }
+    strip.innerHTML = s;
+    $('stripAxis').innerHTML = a;
+  }
+
+  /* ---------- terreno ---------- */
+  let appUpdate = null;
+  function bindLots(){
+    const btns = Array.from(document.querySelectorAll('#lots .lot'));
+    btns.forEach(b => b.addEventListener('click', () => {
+      state.lots = Number(b.dataset.n);
+      try { localStorage.setItem('malaco-lots', String(state.lots)); } catch (e) {}
+      btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      applyLive();
+      if (appUpdate) appUpdate();
+    }));
+  }
+  function bindApp(){
+    const r = $('rate'), y = $('years');
+    appUpdate = null;
+    if (!r || !y) return;
+    appUpdate = () => {
+      state.rate = Number(r.value); state.years = Number(y.value);
+      const buy = landUSD(), sale = buy * Math.pow(1 + state.rate / 100, state.years), gain = sale - buy, half = gain / 2, inv = buy + half;
+      const eq = (Math.pow(inv / buy, 1 / state.years) - 1) * 100;
+      $('rOut').textContent = state.rate + '%';
+      $('yOut').textContent = state.years + ' ' + T('años', 'years');
+      $('aSale').textContent = usd(sale);
+      $('aGain').textContent = usd(gain);
+      $('aInv').textContent = usd(inv);
+      $('aInvS').textContent = T(`Capital + 50% de la plusvalía · ${eq.toFixed(1)}% al año equivalente`, `Capital + 50% of the appreciation · ${eq.toFixed(1)}% per year equivalent`);
+      $('aL1').textContent = usd(buy);
+      $('aL2').textContent = usd(half);
+      $('aL3').textContent = usd(half);
+      $('a1').style.flex = buy + ' 1 0';
+      $('a2').style.flex = half + ' 1 0';
+      $('a3').style.flex = half + ' 1 0';
+      $('a2').hidden = $('a3').hidden = half === 0;
+    };
+    r.addEventListener('input', appUpdate);
+    y.addEventListener('input', appUpdate);
+    appUpdate();
+  }
+
+  render();
+  const start = location.hash.replace('#', '');
+  if (start && $(start)) $(start).scrollIntoView({behavior:'auto'});
+})();
+</script>
+</body>
+</html>
